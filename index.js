@@ -1,9 +1,15 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") {
-		throw new TypeError(`Expected a string, got ${typeof input}`)
-	}
+const xml = require("xml2js")
 
-	return `${input} & ${postfix}`
+const gotXml = options => async response => {
+	response.body = await xml.parseStringPromise(response.body, options)
+
+	return response
 }
+
+module.exports = options => ({
+	hooks: {
+		afterResponse: [gotXml(options)]
+	}
+})

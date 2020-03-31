@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "got-xml",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Got XML support.",
+	"repository": "https://github.com/Richienb/got-xml.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,12 +17,26 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"got",
+		"xml",
+		"parse",
+		"body",
+		"request",
+		"node",
+		"http"
+	],
+	"dependencies": {
+		"xml2js": "^0.4.23"
+	},
 	"devDependencies": {
-		"ava": "^3.5.1",
+		"ava": "^3.5.2",
 		"eslint-config-richienb": "^0.4.2",
+		"got": "^10.7.0",
 		"xo": "^0.28.1"
+	},
+	"peerDependencies": {
+		"got": ">=10"
 	},
 	"resolutions": {
 		"eslint": "^6.8.0"

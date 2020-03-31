@@ -1,41 +1,35 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# got-xml [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/got-xml/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/got-xml)
 
-My awesome module.
+Got XML support.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/got-xml.png)](https://npmjs.com/package/got-xml)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install got-xml
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const got = require("got")
+const xmlGot = got.extend(require("got-xml")())
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	const {body} = await xmlGot("https://www.w3schools.com/xml/simple.xml")
+	
+	console.log(body)
+	//=> { breakfast_menu: { food: ... } }
+})()
 ```
 
 ## API
 
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
+### xmlGot(options?)
 
 #### options
 
 Type: `object`
 
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+Options to pass to [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js#options).

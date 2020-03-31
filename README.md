@@ -13,15 +13,15 @@ npm install got-xml
 ## Usage
 
 ```js
-const got = require("got")
-const xmlGot = got.extend(require("got-xml")())
+const got = require("got");
+const xmlGot = got.extend(require("got-xml")());
 
 (async () => {
-	const {body} = await xmlGot("https://www.w3schools.com/xml/simple.xml")
-	
-	console.log(body)
+	const { body } = await xmlGot("https://www.w3schools.com/xml/simple.xml");
+
+	console.log(body);
 	//=> { breakfast_menu: { food: ... } }
-})()
+})();
 ```
 
 ## API
